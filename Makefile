@@ -14,4 +14,7 @@ createdb:
 dropdb:
 	docker exec -it pg12 dropdb simple_bank
 
+sqlc:
+	sqlc generate
+
 .PHONY: createdb dropdb
