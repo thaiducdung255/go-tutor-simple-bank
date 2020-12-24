@@ -20,7 +20,7 @@ offset $2;
 
 -- name: UpdateAccount :one
 update accounts set owner = $1
-where id = $1
+where id = $2
 returning *;
 
 -- name: DeleteAccount :exec
