@@ -40,7 +40,7 @@ func TestRandomCurrency(t *testing.T) {
 
 	var validCurrency bool = false
 
-	for _, v := range Currencies {
+	for _, v := range currencies {
 		if v == randCurrency {
 			validCurrency = true
 			break

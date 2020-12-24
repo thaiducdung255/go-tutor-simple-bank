@@ -39,9 +39,9 @@ func RandomMoney() int64 {
 	return RandomInt(10, 5000)
 }
 
-var Currencies = []string{"USD", "CAD", "BELI", "YEN", "VND"}
+var currencies = []string{"USD", "CAD", "BELI", "YEN", "VND"}
 
 // RandomCurrency returns a random unit of currency
 func RandomCurrency() string {
-	return Currencies[rand.Intn(len(Currencies))]
+	return currencies[rand.Intn(len(currencies))]
 }
