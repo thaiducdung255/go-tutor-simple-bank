@@ -20,10 +20,9 @@ offset $2;
 
 -- name: UpdateTransfer :one
 update transfers set amount = $1
-where id = $1
+where id = $2
 returning *;
 
 -- name: DeleteTransfer :exec
 delete from transfers
 where id = $1;
-

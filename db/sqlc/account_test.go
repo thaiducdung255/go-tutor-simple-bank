@@ -61,9 +61,10 @@ func TestDeleteAccount(t *testing.T) {
 func TestUpdateAccount(t *testing.T) {
 	account1 := CreateRandomAccount(t)
 
+	newOwner := util.RandomOwner()
 	arg := UpdateAccountParams{
 		ID:    account1.ID,
-		Owner: util.RandomOwner(),
+		Owner: newOwner,
 	}
 
 	account2, err := testQueries.UpdateAccount(context.Background(), arg)
@@ -73,6 +74,7 @@ func TestUpdateAccount(t *testing.T) {
 	require.Equal(t, account1.ID, account2.ID)
 	require.Equal(t, account1.Balance, account2.Balance)
 	require.Equal(t, account1.Currency, account2.Currency)
+	require.Equal(t, account2.Owner, newOwner)
 	require.WithinDuration(t, account1.CreatedAt, account2.CreatedAt, time.Second)
 }
 

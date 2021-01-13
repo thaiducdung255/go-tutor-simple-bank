@@ -19,11 +19,9 @@ offset $2;
 
 -- name: UpdateEntry :one
 update entries set account_id = $1
-where id = $1
+where id = $2
 returning *;
 
 -- name: DeleteEntry :exec
 delete from entries
 where id = $1;
-
-
